@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: golang-app
+    container_name: app-dev
+    environment:
+      - ENVIRONMENT=DEV
+    networks:
+      - proxy-network
+
+  app-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: golang-app
+    container_name: app-prod
+    environment:
+      - ENVIRONMENT=PROD
+    networks:
+      - proxy-network
+
+networks:
+  proxy-network:
+    external: true
