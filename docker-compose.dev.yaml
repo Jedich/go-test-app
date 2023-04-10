@@ -11,7 +11,9 @@ services:
       - ENVIRONMENT=DEV
     networks:
       - proxy-network
+      - dev
 
 networks:
   proxy-network:
     external: true
+  dev:

@@ -11,7 +11,9 @@ services:
       - ENVIRONMENT=PROD
     networks:
       - proxy-network
+      - prod
 
 networks:
   proxy-network:
     external: true
+  prod:
